@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+#container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+}
+.node{
+  color: white;
+}
+
+</style>
+<body>
+  <div id="container">
+    <div class="node">
+      Node 1
+    </div>
+    <div class="node">
+      Node 2
+    </div>
+    <div class="node">
+      Node 3
+    </div>
+    <div class="node">
+      Node 4
+    </div>
+    <div class="node">
+      Node 5
+    </div>
+    <div class="node">
+      Node 6
+    </div>
+    <div class="node">
+      Node 7
+    </div>
+  </div>
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+  var root= d3.select()
+  var container = d3.select("#container")
+  var nodes = container.selectAll(".node")
+
+  container.style("background-color", "black");
+
+  nodes.style("color" , function() {  return "hsl(" + Math.random() * 360 + ",100%,50%)";});
+
+
+</script>
+</body>
